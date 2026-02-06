@@ -54,13 +54,15 @@ function App() {
           <main className="relative z-10 px-6 md:px-20 pb-40 flex flex-col gap-40 md:gap-80">
             {SECCIONES_RIGO.map((seccion, index) => {
               // Identificamos la sección de Café & Deco por ID o Título
-              const isCafe = 
-                seccion.id === "CAFÉ & DECO" || 
+              const isCafe =
+                seccion.id === "CAFÉ & DECO" ||
                 seccion.title?.toLowerCase().includes("café");
 
               // Contenido base de la tarjeta
               const CardContent = (
-                <div className={`w-full md:w-[60%] z-10 ${seccion.featured ? "md:w-full" : ""}`}>
+                <div
+                  className={`w-full md:w-[60%] z-10 ${seccion.featured ? "md:w-full" : ""}`}
+                >
                   <SectionCard {...seccion} />
                 </div>
               );
@@ -85,7 +87,10 @@ function App() {
                 >
                   {/* Si es Café, envolvemos la card en un Link a /cafe */}
                   {isCafe ? (
-                    <Link to="/cafe" className="w-full flex flex-col items-inherit contents">
+                    <Link
+                      to="/cafe"
+                      className="w-full flex flex-col items-inherit contents"
+                    >
                       {CardContent}
                     </Link>
                   ) : (
@@ -95,10 +100,10 @@ function App() {
                   {/* NÚMERO DE FONDO (Indicador de sección) */}
                   <motion.span
                     className={`absolute font-black select-none pointer-events-none -z-10 leading-none
-                      text-[8rem] md:text-[14rem] 
-                      opacity-20 md:opacity-10 
-                      ${index % 2 === 0 ? "-right-2 md:-right-10" : "-left-2 md:-left-10"} 
-                      -top-24 md:-top-40`}
+    text-[25vw] md:text-[14rem] 
+    opacity-20 md:opacity-10 
+    ${index % 2 === 0 ? "-right-4 md:-right-10" : "-left-4 md:-left-10"} 
+    -top-10 md:-top-40`}
                     whileInView={{ y: [30, 0], opacity: [0, 0.2] }}
                     transition={{ duration: 1, delay: 0.4 }}
                   >

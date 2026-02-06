@@ -1,10 +1,17 @@
 @import "tailwindcss";
 
-/* Definimos los colores aesthetic de Grupo Rigo para la v4 */
 @theme {
+  /* Definimos los colores */
   --color-rigo-dark: #1a1a1a;
   --color-rigo-clay: #a68a64;
   --color-rigo-cream: #f5f5f7;
+
+  /* Definimos la fuente para que 'font-sans' la use */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  /* Forzamos que los valores arbitrarios de texto se generen siempre */
+  --text-12rem: 12rem;
+  --text-14rem: 14rem;
 }
 
 @layer utilities {
@@ -15,10 +22,8 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  background-color: #0f0f0f;
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-
-/* Un fix por si las moscas para que las cards se vean siempre */
-.bg-rigo-clay { background-color: var(--color-rigo-clay); }
-.bg-rigo-dark { background-color: var(--color-rigo-dark); }
-.bg-rigo-cream { background-color: var(--color-rigo-cream); }
