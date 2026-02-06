@@ -12,7 +12,7 @@ export const SECCIONES_RIGO = [
   },
   {
     id: 2,
-    title: "CONSTRUCCIÓN",
+    title: "MATERIALES",
     badge: "Obra Gruesa",
     image:
       "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800",

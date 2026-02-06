@@ -31,7 +31,9 @@ const Navbar = () => {
       {/* NAVBAR */}
       <nav className="fixed top-0 w-full p-6 md:p-8 flex justify-between items-center z-[110] mix-blend-difference">
         <div className="text-xl font-black tracking-tighter text-white">
-          <Link to="/" onClick={() => setIsOpen(false)}>GR.</Link>
+          <Link to="/" onClick={() => setIsOpen(false)} className="font-black">
+            <span className="text-gray-500">G</span>R.
+          </Link>
         </div>
 
         <button
@@ -56,7 +58,7 @@ const Navbar = () => {
               <span className="text-[10px] font-black tracking-[0.5em] text-[#8b5a2b] uppercase mb-4 block opacity-60 text-center md:text-left">
                 Navegación
               </span>
-              
+
               {secciones.map((seccion, index) => (
                 <div key={index}>
                   {seccion.disponible ? (

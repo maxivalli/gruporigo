@@ -13,13 +13,13 @@ const Loader = ({ setFinished }) => {
       <div className="overflow-hidden px-4 md:px-10">
         <motion.h1
           // Cambiamos flex-col por flex-row siempre y ajustamos el text-size
-          className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter italic flex flex-row gap-2 md:gap-4 text-white justify-center"
+          className="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter italic flex flex-row gap-2 md:gap-4 text-gray-400 justify-center"
           initial={{ y: 120 }}
           animate={{ y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <span>GRUPO</span> 
-          <span className="text-gray-400">RIGO</span>
+          <span className="text-white">RIGO</span>
         </motion.h1>
         
         <motion.div 
