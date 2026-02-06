@@ -6,7 +6,7 @@ export const PRODUCTOS = [
     priceDoble: "$4.000",
     img: "https://res.cloudinary.com/dy1ll1azp/image/upload/f_auto,q_auto/v1770346261/expresso_fqzscn.png",
     side: "left",
-    deco: "Tip de diseño: El mármol y los tonos oscuros realzan la intensidad del café.",
+    deco: "Tip: Usá superficies de piedra oscura para crear un contraste de lujo con la vajilla blanca.",
   },
   {
     id: "02",
@@ -15,7 +15,7 @@ export const PRODUCTOS = [
     priceDoble: "$4.000",
     img: "https://res.cloudinary.com/dy1ll1azp/image/upload/f_auto,q_auto/v1770382432/cappu_lhmbw3.png",
     side: "right",
-    deco: "Tip de diseño: Las vetas de madera natural crean un entorno de lectura cálido.",
+    deco: "Tip: La madera de roble natural aporta la calidez exacta que necesitan los espacios monocromáticos.",
   },
   {
     id: "03",
@@ -24,16 +24,16 @@ export const PRODUCTOS = [
     priceDoble: "$4.000",
     img: "https://res.cloudinary.com/dy1ll1azp/image/upload/f_auto,q_auto/v1770346262/latte_an4f0a.png",
     side: "left",
-    deco: "Tip de diseño: Cerámicas artesanales aportan textura y alma a tu mesa.",
+    deco: "Tip: Mezclá texturas mate con cerámicas brillantes para darle profundidad visual a tus estantes.",
   },
   {
     id: "04",
     name: "Café Cortado",
     price: "$3.000",
     priceDoble: "$4.000",
-    img: "https://res.cloudinary.com/dy1ll1azp/image/upload/f_auto,q_auto/v1770346262/latte_an4f0a.png", // Usando palmera temporalmente si no hay foto específica
+    img: "https://res.cloudinary.com/dy1ll1azp/image/upload/f_auto,q_auto/v1770346262/latte_an4f0a.png",
     side: "right",
-    deco: "Tip de diseño: Espacios minimalistas para resaltar el contraste del café.",
+    deco: "Tip: En espacios reducidos, usá espejos circulares para duplicar la luz y la sensación de amplitud.",
   },
   {
     id: "05",
@@ -42,16 +42,16 @@ export const PRODUCTOS = [
     priceDoble: "$3.500",
     img: "https://res.cloudinary.com/dy1ll1azp/image/upload/f_auto,q_auto/v1770346263/tea_nefvot.png",
     side: "left",
-    deco: "Tip de diseño: Luz natural y textiles de lino para un rincón de calma absoluta.",
+    deco: "Tip: Los textiles de lino en tonos crudos son el mejor aliado para suavizar mobiliario de líneas rectas.",
   },
   {
     id: "06",
     name: "Chocolate",
     price: "$3.000",
     priceDoble: "$4.000",
-    img: "https://res.cloudinary.com/dy1ll1azp/image/upload/f_auto,q_auto/v1770381559/choco_n7n78s.png", // Usando juice temporalmente
+    img: "https://res.cloudinary.com/dy1ll1azp/image/upload/f_auto,q_auto/v1770381559/choco_n7n78s.png",
     side: "right",
-    deco: "Tip de diseño: Tonos tierra que invitan a compartir momentos dulces.",
+    deco: "Tip: El cobre y el bronce en detalles pequeños elevan instantáneamente la paleta de colores tierra.",
   },
   {
     id: "07",
@@ -59,7 +59,7 @@ export const PRODUCTOS = [
     price: "$3.500",
     img: "https://res.cloudinary.com/dy1ll1azp/image/upload/f_auto,q_auto/v1770346262/juice_inypmr.png",
     side: "left",
-    deco: "Tip de diseño: Plantas de hoja ancha refrescan visualmente espacios neutros.",
+    deco: "Tip: Colocá plantas de hojas grandes cerca de ventanales para conectar el interior con el exterior.",
   },
   {
     id: "08",
@@ -67,14 +67,14 @@ export const PRODUCTOS = [
     price: "$1.000",
     img: "https://res.cloudinary.com/dy1ll1azp/image/upload/f_auto,q_auto/v1770346263/luna_tv8ya5.png",
     side: "right",
-    deco: "Tip de diseño: El dorado de la masa destaca sobre platos de piedra volcánica.",
+    deco: "Tip: La iluminación cálida indirecta (3000K) es clave para resaltar las texturas de los materiales naturales.",
   },
   {
     id: "09",
     name: "Bizcochito",
     price: "$1.000",
-    img: "https://res.cloudinary.com/dy1ll1azp/image/upload/f_auto,q_auto/v1770381779/bizcocho_qrcqzt.png", // Usando luna temporalmente
+    img: "https://res.cloudinary.com/dy1ll1azp/image/upload/f_auto,q_auto/v1770381779/bizcocho_qrcqzt.png",
     side: "left",
-    deco: "Tip de diseño: Texturas rústicas para un acompañamiento clásico.",
+    deco: "Tip: Usá bandejas de cemento o terrazo para organizar objetos y evitar el desorden visual en las mesas.",
   },
 ];
