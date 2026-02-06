@@ -13,7 +13,7 @@ const Hero = ({ scrollYProgress }) => {
     animate: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15, // Espaciado entre la entrada de cada línea
+        staggerChildren: 0.15, 
         delayChildren: 0.2,
       }
     }
@@ -28,7 +28,7 @@ const Hero = ({ scrollYProgress }) => {
       rotateX: 0,
       transition: { 
         duration: 1, 
-        ease: [0.16, 1, 0.3, 1] // Curva de salida suave
+        ease: [0.16, 1, 0.3, 1] 
       }
     }
   };
@@ -54,7 +54,7 @@ const Hero = ({ scrollYProgress }) => {
             BIEN
           </motion.span>
           <motion.span variants={itemVariants} className="block">
-            VENIDOS 
+            VENIDOS.
           </motion.span>
         </motion.h1>
 

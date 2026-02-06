@@ -5,6 +5,7 @@
   --color-rigo-dark: #1a1a1a;
   --color-rigo-clay: #a68a64;
   --color-rigo-cream: #f5f5f7;
+  --color-rigo-zinc: #f2f2f2;
 
   /* Definimos la fuente para que 'font-sans' la use */
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;

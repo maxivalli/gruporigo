@@ -51,7 +51,7 @@ function App() {
         >
           <Hero scrollYProgress={scrollYProgress} />
 
-          <main className="relative z-10 px-6 md:px-20 pb-40 flex flex-col gap-40 md:gap-80">
+          <main className="relative z-10 px-6 md:px-20 pb-0 flex flex-col gap-40 md:gap-80">
             {SECCIONES_RIGO.map((seccion, index) => {
               // Identificamos la sección de Café & Deco por ID o Título
               const isCafe =

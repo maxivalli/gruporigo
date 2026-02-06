@@ -20,10 +20,11 @@ const Navbar = () => {
 
   const secciones = [
     { nombre: "Home", path: "/", disponible: true },
-    { nombre: "Construcción", path: "#", disponible: false },
-    { nombre: "Ferretería", path: "#", disponible: false },
-    { nombre: "Showroom", path: "#", disponible: false },
     { nombre: "Café & Deco", path: "/cafe", disponible: true },
+    { nombre: "Materiales", path: "#", disponible: false },
+    { nombre: "Ferretería", path: "#", disponible: false },
+    { nombre: "Construcción", path: "#", disponible: false },
+    
   ];
 
   return (
