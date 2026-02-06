@@ -46,7 +46,7 @@ export const PRODUCTOS = [
   },
   {
     id: "06",
-    name: "Chocolatada",
+    name: "Chocolate",
     price: "$3.000",
     priceDoble: "$4.000",
     img: "https://res.cloudinary.com/dy1ll1azp/image/upload/f_auto,q_auto/v1770381559/choco_n7n78s.png", // Usando juice temporalmente
