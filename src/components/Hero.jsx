@@ -56,16 +56,13 @@ const Hero = ({ scrollYProgress }) => {
           <motion.span variants={itemVariants} className="block">
             VENIDOS 
           </motion.span>
-          <motion.span variants={itemVariants} className="outline-text text-white block">
-            Future.
-          </motion.span>
         </motion.h1>
 
         <motion.div 
           initial={{ width: 0 }}
           animate={{ width: "100%" }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="h-[1px] bg-white/20 mt-10 w-full max-w-2xl" 
+          className="h-[1px] bg-white/20 mt-10 w-full max-w-3xl" 
         />
       </motion.div>
     </header>

@@ -103,7 +103,7 @@ function App() {
     text-[25vw] md:text-[14rem] 
     opacity-20 md:opacity-10 
     ${index % 2 === 0 ? "-right-4 md:-right-10" : "-left-4 md:-left-10"} 
-    -top-10 md:-top-40`}
+    -top-20 md:-top-40`}
                     whileInView={{ y: [30, 0], opacity: [0, 0.2] }}
                     transition={{ duration: 1, delay: 0.4 }}
                   >

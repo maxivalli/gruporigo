@@ -18,7 +18,7 @@ const SectionCard = ({ title, description, badge, image, colorOverlay }) => {
     <motion.div
       ref={cardRef}
       whileTap={{ scale: 0.98 }}
-      className="relative overflow-hidden rounded-3xl h-[420px] md:h-[480px] shadow-lg bg-zinc-900 group"
+      className="relative overflow-hidden rounded-1xl h-[420px] md:h-[480px] shadow-lg bg-zinc-900 group"
     >
       {/* CONTENEDOR DE IMAGEN PARALLAX */}
       <div className="absolute inset-0 z-0 overflow-hidden">
@@ -41,7 +41,7 @@ const SectionCard = ({ title, description, badge, image, colorOverlay }) => {
             {badge}
           </span>
           <h2 
-            className="text-4xl md:text-5xl font-black text-white mt-4 leading-[0.9] tracking-tight italic uppercase pr-2 break-words"
+            className="text-4xl md:text-8xl font-black text-white mt-4 leading-[0.9] tracking-tight italic uppercase pr-2 break-words"
             style={{ hyphens: 'auto', overflowWrap: 'break-word' }}
           >
             {title}
