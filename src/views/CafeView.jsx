@@ -16,7 +16,7 @@ const CafeView = () => {
   return (
     <div className="relative bg-[#f4ece1] min-h-[100dvh] text-[#2a2a2a] overflow-x-hidden selection:bg-[#8b5a2b] selection:text-white">
       {/* CAPA DE GRANO DE PELÍCULA */}
-      <div className="fixed inset-0 z-[99] pointer-events-none opacity-[0.05] w-full h-[100dvh]">
+      <div className="fixed inset-0 z-[99] pointer-events-none opacity-[0.05]" style={{ width: '100%', height: '120%' }}>
         <svg className="w-full h-full">
           <filter id="grain">
             <feTurbulence type="fractalNoise" baseFrequency="0.80" numOctaves="4" stitchTiles="stitch" />
@@ -28,8 +28,12 @@ const CafeView = () => {
 
       {/* TEXTURA DE MADERA DE FONDO */}
       <div
-        className="fixed inset-0 w-full h-[100dvh] pointer-events-none opacity-20 mix-blend-multiply bg-cover bg-center"
-        style={{ backgroundImage: "url('https://res.cloudinary.com/dy1ll1azp/image/upload/f_auto,q_auto/v1770346325/photo-1525947088131-b701cd0f6dc3_cyrw0t.avif')" }}
+        className="fixed inset-0 pointer-events-none opacity-20 mix-blend-multiply bg-cover bg-center"
+        style={{ 
+          backgroundImage: "url('https://res.cloudinary.com/dy1ll1azp/image/upload/f_auto,q_auto/v1770346325/photo-1525947088131-b701cd0f6dc3_cyrw0t.avif')",
+          width: '100%',
+          height: '120%'
+        }}
       />
 
       <Navbar />
