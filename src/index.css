@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+/* Definimos los colores aesthetic de Grupo Rigo para la v4 */
+@theme {
+  --color-rigo-dark: #1a1a1a;
+  --color-rigo-clay: #a68a64;
+  --color-rigo-cream: #f5f5f7;
+}
+
+@layer utilities {
+  .outline-text {
+    -webkit-text-stroke: 1px currentColor;
+    color: transparent;
+  }
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Un fix por si las moscas para que las cards se vean siempre */
+.bg-rigo-clay { background-color: var(--color-rigo-clay); }
+.bg-rigo-dark { background-color: var(--color-rigo-dark); }
+.bg-rigo-cream { background-color: var(--color-rigo-cream); }
