@@ -22,7 +22,7 @@ const Navbar = () => {
     { nombre: "Home", path: "/", disponible: true },
     { nombre: "Café & Deco", path: "/cafe", disponible: true },
     { nombre: "Materiales", path: "/materiales", disponible: true },
-    { nombre: "Ferretería", path: "#", disponible: false },
+    { nombre: "Ferretería", path: "/ferreteria", disponible: true },
     { nombre: "Construcción", path: "#", disponible: false },
     
   ];

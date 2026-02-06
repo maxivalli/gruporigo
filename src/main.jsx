@@ -6,6 +6,7 @@ import App from "./App.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 import CafeView from "./views/CafeView.jsx";
 import MaterialesView from "./views/MaterialesView.jsx";
+import FerreteriaView from "./views/FerreteriaView.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -16,6 +17,7 @@ createRoot(document.getElementById("root")).render(
 
         <Route path="/cafe" element={<CafeView />} />
         <Route path="/materiales" element={<MaterialesView />} />
+        <Route path="/ferreteria" element={<FerreteriaView />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
