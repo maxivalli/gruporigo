@@ -14,7 +14,7 @@ const CafeView = () => {
   });
 
   return (
-    <div className="relative bg-[#f4ece1] min-h-screen text-[#2a2a2a] overflow-x-hidden selection:bg-[#8b5a2b] selection:text-white">
+    <div className="relative bg-[#f4ece1] min-h-[100dvh] text-[#2a2a2a] overflow-x-hidden selection:bg-[#8b5a2b] selection:text-white">
       {/* CAPA DE GRANO DE PELÍCULA */}
       <div className="fixed inset-0 z-[99] pointer-events-none opacity-[0.05]">
         <svg className="w-full h-full">
@@ -35,7 +35,7 @@ const CafeView = () => {
       <Navbar />
 
       {/* HERO */}
-      <section className="relative h-screen flex flex-col justify-center px-6 md:px-16 overflow-hidden">
+      <section className="relative h-[100dvh] flex flex-col justify-center px-6 md:px-16 overflow-hidden">
         <div className="relative z-10">
           <motion.span initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1 }} className="text-[10px] font-black tracking-[0.6em] uppercase text-[#8b5a2b] mb-4 block">
             Nuestra carta
@@ -65,7 +65,7 @@ const CafeView = () => {
       </section>
 
       {/* FOOTER */}
-      <footer className="h-screen flex flex-col items-center justify-center text-center relative px-6">
+      <footer className="h-[100dvh] flex flex-col items-center justify-center text-center relative px-6">
         <motion.div style={{ opacity: useTransform(smoothProgress, [0.8, 1], [0, 1]) }} className="flex flex-col items-center">
           <h4 className="text-6xl md:text-9xl font-black italic uppercase mb-12 leading-none"> Tomá <br /> una pausa </h4>
           <div className="w-px h-24 bg-[#8b5a2b] opacity-40" />
