@@ -9,8 +9,8 @@ const MaterialesView = () => {
   const marcas = ["Acindar", "Loma Negra", "Knauf", "Tarquini", "Tersuave", "Siderar"];
   const servicios = [
     { id: "01", title: "Acopio Programado", desc: "Congelamos precio. Almacenamos tu inversión en nuestros depósitos propios." },
-    { id: "02", title: "Cómputo Métrico", desc: "Expertos analizan tus planos para optimizar cada kilogramo de hierro." },
-    { id: "03", title: "Logística Pesada", desc: "Grúas y flota propia de alto tonelaje para descarga directa en foso." }
+    { id: "02", title: "Cómputo Métrico", desc: "Analizamos tus planos para optimizar cada kilogramo de hierro." },
+    { id: "03", title: "Logística Pesada", desc: "Grúas y flota propia de alto tonelaje para descarga directa en obra." }
   ];
 
   return (
@@ -89,7 +89,7 @@ const MaterialesView = () => {
               >
                 <span className="font-mono text-[#a68a64] text-lg">{s.id}</span>
                 <h3 className="text-4xl font-black uppercase italic mt-2 group-hover:text-[#a68a64] transition-colors">{s.title}</h3>
-                <p className="mt-4 text-[#f5f5f7]/60 leading-relaxed text-lg max-w-md">{s.desc}</p>
+                <p className="mt-4 text-[#f5f5f7]/60 leading-relaxed text-lg max-w-md text-justify">{s.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -105,7 +105,7 @@ const MaterialesView = () => {
               { val: "N°1", lab: "Distribuidor Zona" }
             ].map((d, i) => (
               <div key={i} className="border-4 border-[#1a1a1a] p-6 flex flex-col justify-between h-48">
-                <span className="text-5xl font-black italic leading-none">{d.val}</span>
+                <span className="text-3xl md:text-5xl font-black italic leading-none">{d.val}</span>
                 <span className="font-mono text-xs uppercase tracking-widest font-bold">{d.lab}</span>
               </div>
             ))}
@@ -122,7 +122,7 @@ const MaterialesView = () => {
             </h2>
             <motion.button 
               whileHover={{ scale: 1.1, backgroundColor: "#f5f5f7", color: "#1a1a1a" }}
-              className="bg-[#a68a64] text-[#f5f5f7] text-2xl font-black italic uppercase px-16 py-8 tracking-tighter"
+              className="bg-[#a68a64] text-[#f5f5f7] text-1xl font-black italic uppercase px-8 py-8 tracking-tighter"
             >
               Pedir Cotización Ahora
             </motion.button>
