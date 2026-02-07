@@ -15,12 +15,8 @@ function App() {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll();
 
-  // Estado del loader: se inicializa chequeando si ya se vio en esta sesión
-  const [loading, setLoading] = useState(() => {
-    return !sessionStorage.getItem("loader-visto");
-  });
+  const [loading, setLoading] = useState(() => !sessionStorage.getItem("loader-visto"));
 
-  // Efecto para manejar el scroll del body y persistir el estado del loader
   useEffect(() => {
     if (loading) {
       document.body.style.overflow = "hidden";
@@ -30,20 +26,31 @@ function App() {
     }
   }, [loading]);
 
+  const getSectionRoute = (seccion) => {
+    // Convertimos a String de forma segura
+    const title = String(seccion.title || "").toLowerCase();
+    const id = String(seccion.id || "").toLowerCase();
+
+    if (title.includes("materiales") || id.includes("materiales")) return "/materiales";
+    if (title.includes("ferretería") || title.includes("ferreteria") || id.includes("ferreteria")) return "/ferreteria";
+    if (title.includes("café") || title.includes("cafe") || id.includes("cafe")) return "/cafe";
+    if (title.includes("construcción") || title.includes("construccion") || id.includes("construccion")) return "/construccion";
+    
+    return null; 
+  };
+
   return (
     <>
-      {/* El Loader solo se renderiza si no se ha visto en la sesión actual */}
       {loading && <Loader setFinished={setLoading} />}
 
       <div
         ref={containerRef}
-        className="bg-[#0f0f0f] min-h-screen text-white font-sans overflow-x-hidden"
+        className="bg-[#0f0f0f] min-h-screen text-[#f5f5f7] font-sans overflow-x-hidden selection:bg-[#a68a64] selection:text-[#1a1a1a]"
       >
         <BackgroundText scrollYProgress={scrollYProgress} />
 
         <Navbar />
 
-        {/* El contenido principal no parpadea si ya se cargó previamente */}
         <motion.div
           initial={{ opacity: loading ? 0 : 1 }}
           animate={{ opacity: 1 }}
@@ -51,61 +58,37 @@ function App() {
         >
           <Hero scrollYProgress={scrollYProgress} />
 
-          <main className="relative z-10 px-6 md:px-20 pb-0 flex flex-col gap-40 md:gap-80">
+          <main className="relative z-10 px-4 md:px-10 pb-40 flex flex-col gap-32 md:gap-60">
             {SECCIONES_RIGO.map((seccion, index) => {
-              // Identificamos la sección de Café & Deco por ID o Título
-              const isCafe =
-                seccion.id === "CAFÉ & DECO" ||
-                seccion.title?.toLowerCase().includes("café");
-
-              // Contenido base de la tarjeta
-              const CardContent = (
-                <div
-                  className={`w-full md:w-[60%] z-10 ${seccion.featured ? "md:w-full" : ""}`}
-                >
-                  <SectionCard {...seccion} />
-                </div>
-              );
+              const route = getSectionRoute(seccion);
 
               return (
                 <motion.div
                   key={seccion.id}
-                  initial={{
-                    opacity: 0,
-                    x: index % 2 === 0 ? -100 : 100,
-                    rotate: index % 2 === 0 ? -10 : 10,
-                    scale: 0.8,
-                  }}
-                  whileInView={{ opacity: 1, x: 0, rotate: 0, scale: 1 }}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
-                  transition={{
-                    duration: 1,
-                    ease: [0.16, 1, 0.3, 1],
-                    delay: 0.1,
-                  }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
                   className={`relative flex flex-col ${index % 2 === 0 ? "items-start" : "items-end"} w-full`}
                 >
-                  {/* Si es Café, envolvemos la card en un Link a /cafe */}
-                  {isCafe ? (
-                    <Link
-                      to="/cafe"
-                      className="w-full flex flex-col items-inherit contents"
-                    >
-                      {CardContent}
-                    </Link>
-                  ) : (
-                    CardContent
-                  )}
+                  <div className="w-full md:w-[85%] lg:w-[75%]">
+                    {route ? (
+                      <Link to={route}>
+                        {/* Cursor-none es opcional si tenés un custom cursor, si no usá cursor-pointer */}
+                        <SectionCard {...seccion} />
+                      </Link>
+                    ) : (
+                      <SectionCard {...seccion} />
+                    )}
+                  </div>
 
-                  {/* NÚMERO DE FONDO (Indicador de sección) */}
+                  {/* NÚMERO DE FONDO MONUMENTAL */}
                   <motion.span
                     className={`absolute font-black select-none pointer-events-none -z-10 leading-none
-    text-[25vw] md:text-[14rem] 
-    opacity-20 md:opacity-10 
-    ${index % 2 === 0 ? "-right-4 md:-right-10" : "-left-4 md:-left-10"} 
-    -top-20 md:-top-40`}
-                    whileInView={{ y: [30, 0], opacity: [0, 0.2] }}
-                    transition={{ duration: 1, delay: 0.4 }}
+                      text-[35vw] md:text-[20rem] italic
+                      text-[#a68a64] opacity-5
+                      ${index % 2 === 0 ? "-right-10" : "-left-10"} 
+                      top-1/2 -translate-y-1/2`}
                   >
                     0{index + 1}
                   </motion.span>

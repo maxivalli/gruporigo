@@ -19,12 +19,12 @@ const Navbar = () => {
   }, [isOpen]);
 
   const secciones = [
-    { nombre: "Home", path: "/", disponible: true },
+    { nombre: "Inicio", path: "/", disponible: true },
+    { nombre: "Nosotros", path: "/nosotros", disponible: true },
     { nombre: "Café & Deco", path: "/cafe", disponible: true },
     { nombre: "Materiales", path: "/materiales", disponible: true },
     { nombre: "Ferretería", path: "/ferreteria", disponible: true },
-    { nombre: "Construcción", path: "#", disponible: false },
-    
+    { nombre: "Construcción", path: "/construccion", disponible: true },
   ];
 
   return (

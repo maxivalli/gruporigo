@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-const SectionCard = ({ title, description, badge, image, colorOverlay }) => {
+const SectionCard = ({ title, description, badge, image }) => {
   const cardRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -9,73 +9,61 @@ const SectionCard = ({ title, description, badge, image, colorOverlay }) => {
     offset: ["start end", "end start"]
   });
 
-  // Parallax cruzado: la imagen sube, el título se desplaza lateralmente
-  const yImage = useTransform(scrollYProgress, [0, 1], ["0%", "-15%"]);
-  const xTitle = useTransform(scrollYProgress, [0, 1], ["0%", "5%"]);
-  const rotateImage = useTransform(scrollYProgress, [0, 1], [-2, 2]);
+  // Efectos de movimiento pesados
+  const yImage = useTransform(scrollYProgress, [0, 1], ["5%", "-15%"]);
+  const xText = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
 
   return (
     <motion.div
       ref={cardRef}
-      className="relative w-full h-[500px] md:h-[650px] flex items-center justify-center bg-transparent group overflow-hidden md:overflow-visible"
+      className="relative w-full h-[500px] md:h-[700px] flex items-center justify-center bg-transparent group"
     >
-      {/* 1. ELEMENTO FLOTANTE DE FONDO (TEXTURA/COLOR) */}
-      <motion.div 
-        initial={{ opacity: 0, scale: 0.8 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        className={`absolute inset-15 md:inset-10 ${colorOverlay} opacity-10 blur-2xl rounded-full z-0`}
-      />
-
-      {/* 2. MARCO DE IMAGEN DECONSTRUIDO */}
+      {/* 1. MARCO BRUTALISTA (Sustituye al blur) */}
       <motion.div
-        style={{ y: yImage, rotate: rotateImage }}
-        className="relative z-10 w-[70%] h-[60%] md:w-[45%] md:h-[70%] border border-white/10 p-2 bg-white/5 backdrop-blur-sm shadow-2xl"
+        style={{ y: yImage }}
+        className="relative z-10 w-[85%] h-[60%] md:w-[50%] md:h-[75%] border-4 border-[#a68a64] bg-[#0f0f0f] p-0 shadow-[20px_20px_0px_#1a1a1a]"
       >
         <div className="relative w-full h-full overflow-hidden">
           <motion.div
             style={{ 
               backgroundImage: `url(${image})`,
-              scale: 1.2
+              scale: 1.1
             }}
-            className="absolute inset-0 bg-cover bg-center grayscale group-hover:grayscale-0 transition-all duration-1000 ease-out"
+            className="absolute inset-0 bg-cover bg-center brightness-50 group-hover:brightness-100 transition-all duration-1000 ease-out"
           />
-          {/* Overlay interno */}
-          <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-700" />
         </div>
         
-        {/* Badge flotando sobre el borde del marco */}
-        <span className="absolute -top-3 -left-3 bg-white text-black px-4 py-1 text-[10px] font-black uppercase tracking-[0.3em] z-30">
+        {/* Badge Sólido Estilo Rigo */}
+        <span className="absolute -top-1 -left-1 bg-[#a68a64] text-[#1a1a1a] px-6 py-2 text-[10px] md:text-xs font-black uppercase tracking-[0.3em] z-30">
           {badge}
         </span>
       </motion.div>
 
-      {/* 3. TIPOGRAFÍA DISRUPTIVA (Fuera de eje) */}
+      {/* 2. TIPOGRAFÍA MASIVA (Mix-Blend) */}
       <div className="absolute inset-0 z-20 pointer-events-none flex flex-col justify-center items-center">
         <motion.h2 
-          style={{ x: xTitle }}
-          className="text-[12vw] md:text-[9vw] font-black text-white mix-blend-difference leading-none uppercase italic tracking-tighter opacity-90"
+          style={{ x: xText }}
+          className="text-[12vw] md:text-[9vw] font-black text-[#f5f5f7] mix-blend-difference leading-[0.8] uppercase italic tracking-tighter"
         >
           {title}
         </motion.h2>
         
-        {/* Descripción desplazada hacia un lateral */}
+        {/* Descripción en Bloque Sólido */}
         <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="absolute bottom-10 right-10 md:right-20 max-w-[200px] md:max-w-[350px] text-right"
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          className="absolute bottom-4 right-4 md:bottom-10 md:right-10 max-w-[220px] md:max-w-[380px] bg-[#f5f5f7] p-6 border-l-8 border-[#a68a64]"
         >
-          <div className="w-12 h-px bg-white ml-auto mb-4" />
-          <p className="text-white/70 text-xs md:text-sm font-light uppercase tracking-widest leading-relaxed">
+          <p className="text-[#1a1a1a] text-[10px] md:text-xs font-black uppercase tracking-widest leading-relaxed text-justify">
             {description}
           </p>
         </motion.div>
       </div>
 
-      {/* 4. ELEMENTO DECORATIVO (Geometría) */}
-      <div className="absolute top-10 left-10 text-white/10 font-mono text-[10px] hidden md:block">
-        ESTU. RIGO // 2024 <br />
-        VANGUARDIA & ESTILO
+      {/* 3. COORDENADAS DECORATIVAS */}
+      <div className="absolute top-10 left-10 text-[#a68a64] font-mono text-[10px] hidden lg:block opacity-40">
+        RIGO_UNIT // SECTION_ID <br />
+        STRICTLY_INDUSTRIAL_GRADE
       </div>
     </motion.div>
   );

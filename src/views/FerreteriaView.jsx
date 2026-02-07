@@ -94,7 +94,7 @@ const FerreteriaView = () => {
                 EQUIPO <br /> <span className="text-[#a68a64]">TOTAL</span> <br /> PRO.
               </h2>
               <p className="text-sm font-bold uppercase tracking-[0.2em] mt-20">
-                Soluciones para industria pesada, talleres de precisión y hobbistas avanzados.
+                Soluciones para profesionales, talleres y el hogar.
               </p>
             </div>
             
@@ -120,14 +120,14 @@ const FerreteriaView = () => {
         <section className="h-screen flex items-center justify-center bg-[#1a1a1a]">
           <div className="text-center">
             <h2 className="text-[12vw] font-black italic text-[#f5f5f7] uppercase leading-none mb-4">
-              ¿HABLAME?
+              ¿QUÉ BUSCAS?
             </h2>
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="relative px-16 py-8 bg-[#a68a64] text-[#1a1a1a] text-3xl font-black italic uppercase overflow-hidden group"
             >
-              <span className="relative z-10">Solicitar Presupuesto</span>
+              <span className="relative z-10">CONTÁNOS</span>
               {/* Efecto de barrido brutalista al hover */}
               <motion.div 
                 className="absolute inset-0 bg-[#f5f5f7] translate-y-full group-hover:translate-y-0 transition-transform duration-300"

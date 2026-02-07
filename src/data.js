@@ -32,12 +32,12 @@ export const SECCIONES_RIGO = [
   },
   {
     id: 4,
-    title: "SHOWROOM",
-    badge: "Todo para tu casa",
+    title: "CONSTRUCCIÓN",
+    badge: "Nos gusta hacer",
     image:
       "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800",
     colorOverlay: "bg-stone-600",
-    description: "Grifería de autor y revestimientos que definen tu estilo.",
+    description: "Desde pequeñas obras hasta naves comerciales",
     featured: false,
   },
 ];
