@@ -11,6 +11,8 @@ import SectionCard from "./components/SectionCard";
 import Footer from "./components/Footer";
 import Loader from "./components/Loader";
 
+// ... (tus imports se mantienen igual)
+
 function App() {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll();
@@ -27,7 +29,6 @@ function App() {
   }, [loading]);
 
   const getSectionRoute = (seccion) => {
-    // Convertimos a String de forma segura
     const title = String(seccion.title || "").toLowerCase();
     const id = String(seccion.id || "").toLowerCase();
 
@@ -49,13 +50,16 @@ function App() {
       >
         <BackgroundText scrollYProgress={scrollYProgress} />
 
-        <Navbar />
+        {/* 1. MOVEMOS LA NAVBAR AQUÍ ABAJO, DENTRO DEL MOTION.DIV */}
 
         <motion.div
-          initial={{ opacity: loading ? 0 : 1 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0 }} // Forzamos siempre a 0 al inicio si es un refresh
+          animate={{ opacity: loading ? 0 : 1 }} // Solo se muestra si loading es false
           transition={{ duration: 1 }}
         >
+          {/* Al estar aquí, la Navbar esperará a que el Loader termine para aparecer */}
+          <Navbar />
+
           <Hero scrollYProgress={scrollYProgress} />
 
           <main className="relative z-10 px-4 md:px-10 pb-40 flex flex-col gap-32 md:gap-60">
@@ -74,7 +78,6 @@ function App() {
                   <div className="w-full md:w-[85%] lg:w-[75%]">
                     {route ? (
                       <Link to={route}>
-                        {/* Cursor-none es opcional si tenés un custom cursor, si no usá cursor-pointer */}
                         <SectionCard {...seccion} />
                       </Link>
                     ) : (
@@ -82,7 +85,6 @@ function App() {
                     )}
                   </div>
 
-                  {/* NÚMERO DE FONDO MONUMENTAL */}
                   <motion.span
                     className={`absolute font-black select-none pointer-events-none -z-10 leading-none
                       text-[35vw] md:text-[20rem] italic
