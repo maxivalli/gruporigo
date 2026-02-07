@@ -13,7 +13,7 @@ const ConstruccionView = () => {
       desc: "Eliminamos la incertidumbre del costo de construcción. Presupuestamos tu vivienda con materiales de primera línea de nuestra propia cantera, asegurando stock y congelando precios desde el día cero de la firma del contrato." 
     },
     { 
-      title: "ESTRUCTURAS DE AUTOR", 
+      title: "ESTRUCTURAS SÓLIDAS", 
       desc: "Especialistas en hormigón visto y grandes luces. Aplicamos ingeniería de naves industriales a la arquitectura residencial, logrando espacios abiertos, modernos y estructuralmente indestructibles." 
     },
     { 
@@ -74,7 +74,7 @@ const ConstruccionView = () => {
               className="bg-[#0f0f0f] p-10 md:p-20 border border-[#a68a64]/10 group hover:bg-[#1a1a1a] transition-colors duration-700"
             >
               <span className="font-mono text-[#a68a64] text-sm block mb-10 tracking-[0.3em]">MÓDULO_0{i + 1}</span>
-              <h3 className="text-4xl md:text-5xl font-black italic uppercase leading-none mb-8 group-hover:text-[#a68a64] transition-colors">
+              <h3 className="text-3xl md:text-5xl font-black italic uppercase leading-none mb-8 group-hover:text-[#a68a64] transition-colors">
                 {p.title}
               </h3>
               <p className="text-[#f5f5f7]/60 leading-relaxed text-justify font-light text-lg">
@@ -107,21 +107,20 @@ const ConstruccionView = () => {
 
         {/* --- 4. CTA: EL COMIENZO --- */}
         <section className="py-40 flex flex-col items-center justify-center text-center px-4">
-          <h2 className="text-7xl md:text-[10vw] font-black italic uppercase leading-none mb-16 tracking-tighter">
+          <h2 className="text-5xl md:text-[10vw] font-black italic uppercase leading-none mb-16 tracking-tighter">
             ¿EMPEZAMOS <br />EL <span className="text-[#a68a64]">PLANO?</span>
           </h2>
           
           <motion.button 
             whileHover={{ backgroundColor: "#a68a64", color: "#1a1a1a", scale: 1.05 }}
-            className="border-4 border-[#a68a64] text-[#a68a64] px-20 py-10 text-2xl font-black italic uppercase tracking-[0.2em] transition-all"
+            className="border-4 border-[#a68a64] text-[#a68a64] px-10 py-5 text-1xl font-black italic uppercase transition-all"
           >
-            Agendar Reunión Técnica
+            Agendar Reunión
           </motion.button>
         </section>
 
         {/* --- FOOTER DIVISIONAL --- */}
-        <div className="p-10 border-t border-[#a68a64]/20 flex justify-between items-center font-mono text-[10px] uppercase opacity-40 italic">
-          <span>Rigo Construcciones // Tu Casa, Nuestra Estructura</span>
+        <div className="p-10 border-t border-[#a68a64]/20 flex justify-center items-center font-mono text-[8px] uppercase opacity-40 italic">
           <span>EST. 2026 // PROYECTOS LLAVE EN MANO</span>
         </div>
       </div>

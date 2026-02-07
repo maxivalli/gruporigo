@@ -125,7 +125,7 @@ const FerreteriaView = () => {
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="relative px-16 py-8 bg-[#a68a64] text-[#1a1a1a] text-3xl font-black italic uppercase overflow-hidden group"
+              className="relative px-10 py-5 bg-[#a68a64] text-[#1a1a1a] text-3xl font-black italic uppercase overflow-hidden group"
             >
               <span className="relative z-10">CONTÁNOS</span>
               {/* Efecto de barrido brutalista al hover */}

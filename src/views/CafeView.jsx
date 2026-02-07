@@ -145,7 +145,7 @@ const CafeView = () => {
           className="flex flex-col items-center"
         >
           <h4 className="text-6xl md:text-9xl font-black italic uppercase mb-12 leading-none">
-            Tomá <br /> una pausa
+            Tomate <br /> una pausa
           </h4>
           <div className="w-px h-24 bg-[#8b5a2b] opacity-40" />
         </motion.div>
