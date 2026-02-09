@@ -32,10 +32,10 @@ function App() {
     const title = String(seccion.title || "").toLowerCase();
     const id = String(seccion.id || "").toLowerCase();
 
-    if (title.includes("materiales") || id.includes("materiales")) return "/materiales";
-    if (title.includes("ferretería") || title.includes("ferreteria") || id.includes("ferreteria")) return "/ferreteria";
+    if (title.includes("materiales") || id.includes("materiales")) return "/";
+    if (title.includes("ferretería") || title.includes("ferreteria") || id.includes("ferreteria")) return "/";
     if (title.includes("café") || title.includes("cafe") || id.includes("cafe")) return "/cafe";
-    if (title.includes("construcción") || title.includes("construccion") || id.includes("construccion")) return "/construccion";
+    if (title.includes("construcción") || title.includes("construccion") || id.includes("construccion")) return "/";
     
     return null; 
   };
